@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { useRef } from "react"
 
-export function Login({setId}:{setId:(arg0: string) => void}) {
+export function Login({setId, setUser}:{setId:(arg0: string) => void, setUser:(arg0:string) => void}) {
 
     const navigate = useNavigate();
 
@@ -19,6 +19,7 @@ export function Login({setId}:{setId:(arg0: string) => void}) {
                 }
                 var random = String(Math.floor(Math.random()*10000));
                 setId(random)
+                setUser(reference.current?.value as string)
                 navigate("/dashboard")
                 
 

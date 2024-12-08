@@ -5,12 +5,13 @@ import { Login } from './login'
 import { useState } from "react"
 
 function App() {
-  const [id, setID] = useState<string>("")
+  const [id, setID] = useState<string>("");
+  const [userName, setUser] = useState<string>("")
 
   return <BrowserRouter>
     <Routes>
-      <Route index element={<Login setId={setID} />}></Route>
-      <Route path="/dashboard" element={<Dashboard id={id}/>}></Route>
+      <Route index element={<Login setUser={setUser} setId={setID} />}></Route>
+      <Route path="/dashboard" element={<Dashboard setId={setID} id={id} name={userName}/>}></Route>
     </Routes>
   </BrowserRouter>
 }
